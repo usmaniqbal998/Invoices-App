@@ -1,0 +1,5 @@
+!.*rc.js
+
+node_modules
+dist
+
