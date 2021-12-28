@@ -13,5 +13,8 @@ declare module "styled-components" {
     heavyTextColor: string;
     mode: string;
     darkColor?: string;
+    primaryLight: string;
+    secondaryLight: string;
+    lightAccentColor: string;
   }
 }

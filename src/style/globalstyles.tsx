@@ -4,6 +4,8 @@ const GlobalStyles = createGlobalStyle`
 *,*::after,*::before{
   padding: 0;
   margin: 0;
+  outline: none;
+  border: 0px;
 }
 html{
  font-size:62.5%;

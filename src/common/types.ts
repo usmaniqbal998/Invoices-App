@@ -11,3 +11,5 @@ export type typographyVariants =
   | "body1"
   | "body2"
   | undefined;
+
+export type buttontypes = "primary" | "secondary" | "danger";
