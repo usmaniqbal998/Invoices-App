@@ -3,13 +3,22 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = (env) => {
-  console.log(env);
   return {
     mode: env.production ? "production" : "development",
     entry: path.join(__dirname, "src", "index.js"),
     output: {
       path: path.resolve(__dirname, "dist"),
       filename: "[name].[contenthash].js",
+    },
+
+    resolve: {
+      extensions: [".tsx", ".ts", ".js", ".jsx", ".json"],
+      modules: ["node_modules"],
+      alias: {
+        react: path.resolve("./node_modules/react"),
+        "react-dom": path.resolve("./node_modules/react-dom"),
+        "styled-components": path.resolve("./node_modules/styled-components"),
+      },
     },
     module: {
       rules: [
@@ -34,13 +43,14 @@ module.exports = (env) => {
       new CleanWebpackPlugin(),
       new HtmlWebpackPlugin({
         template: path.join(__dirname, "public", "index.html"),
-        filename: "[name].html",
+        filename: "index.html",
         favicon: "./src/assets/favicon-32.png",
+        inject: true,
       }),
     ],
     devServer: {
       open: true,
-      port: 3000,
+      port: 6080,
     },
   };
 };
