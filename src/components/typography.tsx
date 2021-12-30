@@ -30,48 +30,48 @@ const Text = styled.p<TextProps>((props) => {
   switch (props.type) {
     case "h1":
       return {
-        fontSize: "32px",
-        lineHeight: "36px",
+        fontSize: "3.2rem",
+        lineHeight: "3.6rem",
         letterSpacing: "-1px",
         ...styles,
       };
 
     case "h2":
       return {
-        fontSize: "20px",
-        lineHeight: "22px",
+        fontSize: "2.0rem",
+        lineHeight: "2.2rem",
         letterSpacing: "-0.63px",
         ...styles,
       };
 
     case "h3":
       return {
-        fontSize: "16px",
-        lineHeight: "24px",
+        fontSize: "1.6rem",
+        lineHeight: "2.4rem",
         letterSpacing: "-0.8px",
         ...styles,
       };
 
     case "h4":
       return {
-        fontSize: "12px",
-        lineHeight: "15px",
+        fontSize: "1.2rem",
+        lineHeight: "1.5rem",
         letterSpacing: "-0.25px",
         ...styles,
       };
 
     case "body1":
       return {
-        fontSize: "12px",
-        lineHeight: "15px",
+        fontSize: "1.2rem",
+        lineHeight: "1.5rem",
         letterSpacing: "-0.25px",
         ...styles,
       };
 
     case "body2":
       return {
-        fontSize: "11px",
-        lineHeight: "18px",
+        fontSize: "1.1rem",
+        lineHeight: "1.8rem",
         letterSpacing: "-0.23px",
         ...styles,
       };

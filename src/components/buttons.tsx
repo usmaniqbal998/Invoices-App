@@ -31,21 +31,21 @@ const Button = ({
 
 const Btn = styled.button<ButtonProps>((props) => {
   const baseStyles = `
-    border-radius: 24px;
-    padding: ${props.inputAdornment ? "8px" : "16px"} ${
-    props.inputAdornment ? "8px" : "24px"
+    border-radius: 2.4rem;
+    padding: ${props.inputAdornment ? "0.8rem" : "1.6rem"} ${
+    props.inputAdornment ? "0.8rem" : "2.4rem"
   };
-    padding-right: 24px;
+    padding-right: 2.4rem;
     display: flex;
     align-items: center;
     justify-content:${props.inputAdornment ? "space-between" : "center"};
     color: #fff;
-    font-size: 12px;
+    font-size: 1.2rem;
     font-weight: bold;
     letter-spacing: -0.25px;
-    line-height: 15px;
+    line-height: 1.5rem;
     font-family: inherit;
-    width: ${props.long ? "350px" : "unset"};
+    width: ${props.long ? "35rem" : "unset"};
     
   `;
   switch (props.btnType) {
@@ -53,7 +53,7 @@ const Btn = styled.button<ButtonProps>((props) => {
       return `
             ${baseStyles}
             background-color:${props.theme.primaryColor};
-            width:${props.inputAdornment ? "160px" : "unset"};
+            width:${props.inputAdornment ? "16rem" : "unset"};
             &:hover{
                 background-color:${props.theme.primaryLight};
                 cursor:pointer;
@@ -87,10 +87,10 @@ const Btn = styled.button<ButtonProps>((props) => {
 });
 
 const Ico = styled.div`
-  width: 32px;
-  height: 32px;
+  width: 3.2rem;
+  height: 3.2rem;
   background-color: #fff;
-  border-radius: 16px;
+  border-radius: 1.6rem;
   display: flex;
   justify-content: center;
   align-items: center;
