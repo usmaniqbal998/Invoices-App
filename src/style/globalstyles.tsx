@@ -6,6 +6,7 @@ const GlobalStyles = createGlobalStyle`
   margin: 0;
   outline: none;
   border: 0px;
+  box-sizing: border-box;
 }
 html{
  font-size:62.5%;

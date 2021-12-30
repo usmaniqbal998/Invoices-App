@@ -12,7 +12,7 @@ module.exports = (env) => {
     },
 
     resolve: {
-      extensions: [".tsx", ".ts", ".js", ".jsx", ".json"],
+      extensions: [".tsx", ".ts", ".js", ".jsx", ".json", "jpg"],
       modules: ["node_modules"],
       alias: {
         react: path.resolve("./node_modules/react"),

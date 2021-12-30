@@ -12,6 +12,7 @@ export const lightTheme: DefaultTheme = {
   lightTextColor: "#7E88C3",
   lightAccentColor: "#FF9797",
   heavyTextColor: "#0C0E16",
+  darkColor: "#1E2139",
 };
 
 export const darkTheme: DefaultTheme = {
