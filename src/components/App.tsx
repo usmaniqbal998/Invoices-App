@@ -8,6 +8,7 @@ import Typography from "./typography";
 import Button from "./buttons";
 import PlusIcon from "../assets/Icons/plusIco";
 import NavBar from "./navBar";
+import { device } from "../style/devices";
 
 const App = () => {
   const { activeTheme, toggleTheme } = useThemeSwitch();
@@ -28,6 +29,10 @@ const App = () => {
 
 const AppContainer = styled.div`
   display: flex;
+
+  @media ${device.tablets} {
+    flex-direction: column;
+  }
 `;
 
 export default App;
