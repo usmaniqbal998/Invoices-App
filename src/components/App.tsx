@@ -4,8 +4,9 @@ import styled, { ThemeProvider } from "styled-components";
 import { lightTheme, darkTheme } from "../style/themes";
 import useThemeSwitch from "../hooks/useThemeSwitcher";
 import { themes } from "../common/types";
-import NavBar from "./navBar";
+import NavBar from "./Navbar";
 import { device } from "../style/devices";
+import Main from "./Main";
 
 const App = () => {
   const { activeTheme, toggleTheme } = useThemeSwitch();
@@ -18,6 +19,7 @@ const App = () => {
         <GlobalStyles />
         <AppContainer>
           <NavBar activeTheme={activeTheme} toggleTheme={toggleTheme} />
+          <Main />
         </AppContainer>
       </ThemeProvider>
     </>
@@ -25,11 +27,12 @@ const App = () => {
 };
 
 const AppContainer = styled.div`
+  position: relative;
   display: flex;
-
-  @media ${device.tablets} {
-    flex-direction: column;
-  }
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
 `;
 
 export default App;

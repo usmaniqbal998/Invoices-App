@@ -31,9 +31,11 @@ const NavBar = ({ toggleTheme, activeTheme }: Props) => {
 
 const NavBarContainer = styled.div`
   width: 10rem;
-  height: 100vh;
+  height: 100%;
   display: flex;
   position: fixed;
+  left: 0;
+  top: 0;
   background-color: ${(props) => props.theme.darkColor};
   flex-direction: column-reverse;
   border-radius: 0 2rem 2rem 0;
