@@ -5,7 +5,6 @@ import { lightTheme, darkTheme } from "../style/themes";
 import useThemeSwitch from "../hooks/useThemeSwitcher";
 import { themes } from "../common/types";
 import NavBar from "./Navbar";
-import { device } from "../style/devices";
 import Main from "./Main";
 
 const App = () => {
