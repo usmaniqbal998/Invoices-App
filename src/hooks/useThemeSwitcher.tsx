@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { themes } from "../common/types";
 
 const useThemeSwitch = () => {
@@ -6,19 +6,15 @@ const useThemeSwitch = () => {
     return localStorage.getItem("theme") || themes.LIGHT_THEME;
   });
 
-  const toggleTheme = () => {
-    setActiveTheme(
-      activeTheme === themes.LIGHT_THEME
-        ? themes.DARK_THEME
-        : themes.LIGHT_THEME
+  useEffect(() => {
+    localStorage.setItem("theme", activeTheme);
+  }, [activeTheme]);
+
+  const toggleTheme = useCallback(() => {
+    setActiveTheme((theme) =>
+      theme === themes.LIGHT_THEME ? themes.DARK_THEME : themes.LIGHT_THEME
     );
-    localStorage.setItem(
-      "theme",
-      activeTheme === themes.LIGHT_THEME
-        ? themes.DARK_THEME
-        : themes.LIGHT_THEME
-    );
-  };
+  }, [setActiveTheme]);
 
   return { activeTheme, toggleTheme };
 };
