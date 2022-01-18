@@ -23,7 +23,6 @@ const Button = ({
   return (
     <Btn inputAdornment={InputAdornment && true} long={long} btnType={variant}>
       {InputAdornment && <Ico> {InputAdornment}</Ico>}
-
       <span>{label}</span>
     </Btn>
   );

@@ -5,17 +5,19 @@ import { typographyVariants } from "../common/types";
 interface Props {
   variant?: typographyVariants;
   children: React.ReactNode;
+  className?: string;
 }
 
 interface TextProps {
   type: typographyVariants;
 }
 
-const Typography = ({ variant = undefined, children }: Props) => {
+const Typography = ({ variant = undefined, children, className }: Props) => {
   return (
     <Text
       as={variant === "body1" || variant === "body2" ? "p" : variant}
       type={variant}
+      className={className}
     >
       {children}
     </Text>

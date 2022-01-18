@@ -1,6 +1,7 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const ReactRefreshWebpackPlugin = require("@pmmmwh/react-refresh-webpack-plugin");
 
 module.exports = (env) => {
   return {
@@ -27,6 +28,11 @@ module.exports = (env) => {
           exclude: /node_modules/,
           use: {
             loader: "babel-loader",
+            options: {
+              plugins: [
+                !env.production && require.resolve("react-refresh/babel"),
+              ].filter(Boolean),
+            },
           },
         },
         {
@@ -43,14 +49,19 @@ module.exports = (env) => {
       new CleanWebpackPlugin(),
       new HtmlWebpackPlugin({
         template: path.join(__dirname, "public", "index.html"),
-        filename: "index.html",
         favicon: "./src/assets/favicon-32.png",
-        inject: true,
       }),
-    ],
+
+      !env.production && new ReactRefreshWebpackPlugin(),
+    ].filter(Boolean),
     devServer: {
       open: true,
-      port: 6080,
+      port: 3000,
+      compress: true,
+      hot: true,
+      headers: {
+        "Cache-Control": "no-store",
+      },
     },
   };
 };
